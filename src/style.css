@@ -1,0 +1,76 @@
+html,
+body {
+  margin: 5;
+  padding: 0;
+  font-family: sans-serif;
+}
+.wrapper {
+  max-width: 420px;
+  min-height: 96vh;
+  margin: 0 auto;
+}
+
+button {
+  font-size: 2rem;
+  border: 1px solid rgb(14, 10, 10);
+  cursor: pointer;
+}
+.modifiers button {
+  background-color: rgb(228, 15, 15);
+}
+.operations button {
+  background-color: orange;
+  width: 100px;
+}
+.digits button {
+  background-color: #efefef;
+}
+
+.wrapper,
+.subgrid {
+  display: grid;
+}
+.wrapper {
+  grid-template-areas:
+    "total total total total"
+    "modif modif modif oper"
+    "digit digit digit oper"
+    "digit digit digit oper"
+    "digit digit digit oper"
+    "digit digit digit oper";
+  grid-auto-columns: 1fr;
+}
+.show-input {
+  grid-area: total;
+  background-color: #72e7f7;
+}
+.modifiers {
+  grid-area: modif;
+  background-color: #c2713c;
+}
+.operations {
+  grid-area: oper;
+}
+.digits {
+  grid-area: digit;
+}
+
+.show-input {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.modifiers {
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+}
+
+.digits {
+  display: flex;
+  flex-wrap: wrap;
+}
+.digits button {
+  flex: 1 0 26%;
+}
